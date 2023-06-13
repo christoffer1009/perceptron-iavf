@@ -40,9 +40,9 @@ func getTokens(str string) []string {
 	return tokens
 }
 
-func GetReviewsFromCsv() []*Review {
+func GetReviewsFromCsv(filename string) []*Review {
 	// Abrir o arquivo CSV
-	file, err := os.Open("./data/reviews_en.csv")
+	file, err := os.Open(fmt.Sprintf("./data/%s.csv", filename))
 	if err != nil {
 		log.Fatal(err)
 	}
